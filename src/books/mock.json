@@ -1,0 +1,17 @@
+{
+  "libraries": [
+    {
+      "id": "596a6811-f674-45c5-8181-4d4f58fb2864",
+      "title": "lib1"
+    }
+  ],
+  "books": [
+    {
+      "id": "cad4dad0-8804-4562-af02-e94e26f0e7d5",
+      "title": "book1 cooking",
+      "description": "cooking dasdas asdasda d asdasd as d as d as d as das d  as  a dasdasdasd",
+      "createdDate": 1610828813208,
+      "libraryId": "596a6811-f674-45c5-8181-4d4f58fb2864"
+    }
+  ]
+}
