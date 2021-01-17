@@ -13,7 +13,7 @@ npm-debug.log
 /quick-start
 
 # tests
-/test
+tmp
 /coverage
 /.nyc_output
 

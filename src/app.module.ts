@@ -1,6 +1,7 @@
-import { Module }          from "@nestjs/common";
-import { GraphQLModule } from "@nestjs/graphql";
-import { BooksModule }   from "./books/books.module";
+import { Module }           from "@nestjs/common";
+import { GraphQLModule }    from "@nestjs/graphql";
+import { BooksModule }      from "./books/books.module";
+import { LoggingPlugin }    from "./common/plugins/logging.plugin";
 
 @Module({
   imports: [
@@ -10,8 +11,11 @@ import { BooksModule }   from "./books/books.module";
       autoSchemaFile: "schema.gql",
       debug: true,
       playground: true,
+      plugins: [
+        new LoggingPlugin,
+      ]
     })
-  ]
+  ],
 })
 export class AppModule {
 }

@@ -1,16 +1,13 @@
-import { Plugin } from '@nestjs/graphql';
-import {
-  ApolloServerPlugin,
-  GraphQLRequestListener,
-} from 'apollo-server-plugin-base';
+import { Plugin }                                                                                                                from "@nestjs/graphql";
+import { ApolloServerPlugin, BaseContext, GraphQLRequestContext, GraphQLRequestContextWillSendResponse, GraphQLRequestListener } from "apollo-server-plugin-base";
 
 @Plugin()
 export class LoggingPlugin implements ApolloServerPlugin {
-  requestDidStart(): GraphQLRequestListener {
-    console.log('Request started');
+  requestDidStart(requestContext: GraphQLRequestContext<BaseContext>): GraphQLRequestListener {
+    console.log("Request started");
     return {
-      willSendResponse() {
-        console.log('Will send response');
+      willSendResponse(requestContext: GraphQLRequestContextWillSendResponse<BaseContext>) {
+        console.log("Will send response");
       },
     };
   }
